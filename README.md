@@ -94,6 +94,16 @@ git push -u origin main
 - `.gitattributes` — Normaliza finales de línea y trata archivos como texto.
 - `README.md` — Documentación del proyecto.
 
+## Integración continua (CI/CD)
+
+Este repositorio incluye un workflow de GitHub Actions (`.github/workflows/dotnet-build.yml`) que:
+
+- Se ejecuta automáticamente en cada push a `main`
+- Compila la solución con .NET 8.0
+- Ejecuta pruebas unitarias (si existen)
+
+El flujo garantiza que los cambios compilados siempre estén en estado limpio.
+
 ## Notas
 
 Este repositorio usa una implementación simple en memoria para `IWeatherForecastRepository` como ejemplo.
