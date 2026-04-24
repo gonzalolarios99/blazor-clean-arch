@@ -1,0 +1,44 @@
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+.vscode/
+.nupkg
+*.nupkg
+*.log
+*.vspscc
+TestResults/
+*.dbmdl
+*.dbproj.schemaview
+*.pdb
+*.cache
+
+# ASP.NET
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Rider
+.idea/
+
+# Blazor
+wwwroot/css/app.css
+
+# Publish output
+publish/
+*.[Pp]ublish.xml
+
+# Temporary files
+*.tmp
+*~
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# Visual Studio Code
+.history/
+node_modules/

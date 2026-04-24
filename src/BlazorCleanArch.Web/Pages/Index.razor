@@ -1,0 +1,45 @@
+@page "/"
+
+<h1>Blazor Clean Architecture</h1>
+<p>Ejemplo de una aplicación Blazor Server organizada con capas de dominio, aplicación e infraestructura.</p>
+
+@if (forecasts is null)
+{
+    <p><em>Cargando datos...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Temperatura (C)</th>
+                <th>Temperatura (F)</th>
+                <th>Resumen</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in forecasts)
+            {
+                <tr>
+                    <td>@item.Date.ToShortDateString()</td>
+                    <td>@item.TemperatureC</td>
+                    <td>@item.TemperatureF</td>
+                    <td>@item.Summary</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private IEnumerable<WeatherForecastDto>? forecasts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        forecasts = await ForecastService.GetForecastsAsync();
+    }
+
+    [Inject]
+    private IWeatherForecastService ForecastService { get; set; } = default!;
+}
