@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using BlazorCleanArch.Domain.Entities;
 
 namespace BlazorCleanArch.Domain.Interfaces
 {
